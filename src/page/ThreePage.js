@@ -22,6 +22,7 @@ export default function App() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+    <h1>Using YUP</h1>
       <input {...register("firstName")} />
       <p>{errors.firstName?.message}</p>
 

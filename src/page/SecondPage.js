@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { useForm } from "react-hook-form";
 
 // react-hook-form
@@ -12,6 +12,12 @@ const SecondPage = () => {
       console.log(`${pair[0]}: ${pair[1]}`);
     }
   };
+  useEffect(()=>{
+    console.log('改變1',register);
+    return()=>{
+        console.log('改變2',register);
+    }
+  })
 
   //every single rendering trigger the following code once
   console.log("Form rendered");

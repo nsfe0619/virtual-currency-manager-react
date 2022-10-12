@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 // 傳統form
 const FirstPage = () => {
@@ -14,6 +14,12 @@ const FirstPage = () => {
       console.log(`${pair[0]}: ${pair[1]}`);
     }
   };
+  useEffect(()=>{
+    console.log('改變1',surname);
+    return()=>{
+        console.log('改變2',surname);
+    }
+  })
 
   //every single rendering trigger the following code once
   console.log("Form rendered");
