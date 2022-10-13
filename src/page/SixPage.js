@@ -16,7 +16,9 @@ Task.defaultProps = {
 };
 
 const TodoList = () => {
-  const todoList = useSelector(state => state.todoList);
+  const todoList = useSelector(state => {
+    console.log('state',state);
+    return state.todoReducer.todoList});
   return todoList.map(task => (
     <ul key={task}>
       <Task task={task} />
@@ -32,12 +34,12 @@ const TodoListPage = () => (
 );
 
 const CurrentTask = () => {
-  const todoList = useSelector(state => state.todoList);
+  const todoList = useSelector(state => state.todoReducer.todoList);
   return <div>{`下一件事要做：${todoList[0]}`}</div>;
 };
 
 const SixPage = () => {
-  const todoList = useSelector(state => state.todoList);
+  const todoList = useSelector(state => state.todoReducer.todoList);
   return (
     <div>
       <span>{`代辦事項數：${todoList.length}`}</span>

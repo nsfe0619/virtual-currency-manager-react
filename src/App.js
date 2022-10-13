@@ -12,6 +12,7 @@ import EightPage from "./page/EightPage";
 import NightPage from "./page/NightPage";
 import TenPage from "./page/TenPage";
 import DataPage from "./page/DataPage";
+import PricePage from "./page/PricePage";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -33,6 +34,9 @@ const App = () => {
                 <Nav className="me-auto">
                   <LinkContainer to="/DataPage">
                     <Nav.Link>DataPage</Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer to="/PricePage">
+                    <Nav.Link>PricePage</Nav.Link>
                   </LinkContainer>
                   <NavDropdown title="TestPage" id="basic-nav-dropdown">
                     <LinkContainer to="/FirstPage">
@@ -83,6 +87,7 @@ const App = () => {
             <Route path="/NightPage" element={<NightPage />} />
             <Route path="/TenPage" element={<TenPage />} />
             <Route path="/DataPage" element={<DataPage />} />
+            <Route path="/PricePage" element={<PricePage />} />
           </Routes>
         </HashRouter>
       </div>

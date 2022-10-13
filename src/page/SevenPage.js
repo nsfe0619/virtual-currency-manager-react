@@ -17,7 +17,7 @@ Task.defaultProps = {
 };
 
 const TodoList = () => {
-  const todoList = useSelector(state => state.todoList);
+  const todoList = useSelector(state => state.todoReducer.todoList);
   return todoList.map(task => (
     <ul key={task}>
       <Task task={task} />
@@ -33,13 +33,13 @@ const TodoListPage = () => (
 );
 
 const CurrentTask = () => {
-  const todoList = useSelector(state => state.todoList);
+  const todoList = useSelector(state => state.todoReducer.todoList);
   return <div>{`下一件事要做：${todoList[0]}`}</div>;
 };
 
 const SevenPage = () => {
     const dispatch = useDispatch();
-  const todoList = useSelector(state => state.todoList);
+  const todoList = useSelector(state => state.todoReducer.todoList);
   const [newTodo, setNewTodo] = useState('');
   return (
     <div>
